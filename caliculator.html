@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caliculator</title>
+<style>
+   body
+   {
+    font-family: 'open sans',sans-serif;
+    background-color: black;
+   }
+   #container
+   {
+       width: 1000px;
+       height: 550px;
+       background-color: #6B6F9E;
+       margin : 70px auto;
+   }
+   #caliculator
+   {
+       width: 350px;
+       height: 250px;
+       background-color: #eaedef;
+        margin : 0 auto;
+        top : 20%;
+        position: relative;
+        border-radius: 5px;
+   }
+   #result
+   {
+       padding: 15px;
+       height: 7px;
+       border: 2px solid  #3CDFE2;
+       color: darkgreen;
+       font-weight: bold;
+       font-size: 15px;
+   }
+    #bt
+    {   
+        border-width: 0;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        
+    }
+    .point
+    {
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 30px;
+        cursor: pointer;
+        border-width: 3px;
+        border-color: powderblue;
+    }
+    #tb
+    {
+        width: 100%;
+        height: 100%;
+        
+    }
+    #bt:active
+    {
+        font-size: 13px;
+    }
+    #bt:focus,.point:focus
+    {
+        outline: 0;
+    }
+   
+    #t4
+    {
+        font-size: 20px;
+        background-color: #20b2aa;
+    }
+    #t8
+    {
+        font-size: 20px;
+        background-color: #ffa500;
+    }
+    #t12
+    {
+        font-size: 20px;
+        background-color: #f08080;
+    }
+    #t16
+    {
+        font-size: 20px;
+        background-color: #7d93e0;
+    }
+    #t20
+    {
+        font-size: 20px;
+        background-color: #9477af;
+    }
+    #t17
+    {
+        font-size: 20px;
+        background-color: darksalmon;
+    }
+    #t19
+    {
+        font-size: 20px;
+        background-color: gold;
+    }
+    #h{
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        position: relative;
+        top : 15%;
+        color:#3CDFE2;
+        font-size : 45px;
+    }
+    footer{
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        padding: 3px;
+        background-color: #1d3557;
+        color: seashell;
+    }
+    #a
+    {
+        color: #ffbe0b;
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="h"> Caliculator</h1>
+        <div id="caliculator">
+            
+    <table id="tb">
+        <tr>
+            <td colspan="3"> <input type="text" id="result"></td>
+            <td> <input id="t4" class="point" type="button" value="c" onclick="clr()"></td>
+            
+        </tr>
+        <tr>
+            <td><input id="bt" type="button" value="1" onclick="dis('1')"> </td>
+            <td><input id="bt"  type="button" value="2" onclick="dis('2')"> </td>
+            <td><input id="bt" type="button" value="3" onclick="dis('3')"> </td>
+            <td><input id="t8" class="point" type="button" value="/" onclick="dis('/')"> </td>
+        </tr>
+        <tr>
+            <td><input id="bt" type="button" value="4" onclick="dis('4')"> </td>
+            <td><input id="bt" type="button" value="5" onclick="dis('5')"> </td>
+            <td><input id="bt" type="button" value="6" onclick="dis('6')"> </td>
+            <td><input id="t12" class="point" type="button" value="-" onclick="dis('-')"> </td>
+        </tr>
+        <tr>
+            <td><input id="bt" type="button" value="7" onclick="dis('7')"> </td>
+            <td><input  id="bt"type="button" value="8" onclick="dis('8')"> </td>
+            <td><input id="bt" type="button" value="9" onclick="dis('9')"> </td>
+            <td><input id="t16" class="point" type="button" value="+" onclick="dis('+')"> </td>
+        </tr>
+        <tr>
+            <td><input id="t17" class="point" type="button" value="." onclick="dis('.')"> </td>
+            <td><input id="bt" type="button" value="0" onclick="dis('0')"> </td>
+            <td><input  id="t19" class="point" type="button" value="=" onclick="solve()"> </td>
+            <td><input id="t20" class="point" type="button" value="*" onclick="dis('*')"> </td>
+        </tr>
+    </table>
+    </div>
+    </div>
+    <script>
+        function dis(val)
+        {
+            document.getElementById("result").value+=val
+        }
+        function solve()
+        {
+            let x = document.getElementById("result").value
+            let y = eval(x)
+            document.getElementById("result").value=y
+        }
+        function clr()
+        {
+            document.getElementById("result").value = ""
+        }
+    </script>
+    <footer>
+        <p>Designer: Jagadeesh<br>
+            <a id="a" href="https://mail.google.com/mail/u/0/#inbox?compose=new">jagadeeshtharaka99@gmail.com</a>
+        </p>
+    </footer>
+</body>
+</html>
